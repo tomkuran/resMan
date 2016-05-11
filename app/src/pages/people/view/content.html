@@ -1,0 +1,19 @@
+<md-icon md-svg-icon="svg-3" class="avatar"></md-icon>
+<h2 class="md-title">Happy DB People</h2>
+<div flex-xs flex-gt-xs="100" layout="column">
+	<md-card ng-repeat="person in people">
+		<md-card-title>
+			<md-card-title-text>
+				<span class="md-headline">{{person.firstName}} {{person.lastName}}</span>
+				<span class="md-subhead">{{person.description}}</span>
+			</md-card-title-text>
+			<md-card-title-media>
+				<div class="md-media-sm card-media"></div>
+			</md-card-title-media>
+		</md-card-title>
+		<md-card-actions layout="row" layout-align="end center">
+			<md-button>Action 1</md-button>
+			<md-button>Action 2</md-button>
+		</md-card-actions>
+	</md-card>
+</div>
