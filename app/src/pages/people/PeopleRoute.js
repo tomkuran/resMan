@@ -9,7 +9,7 @@
       .when('/people', {
         templateUrl: '/src/pages/people/view/content.html',
         controller: 'PeopleController',
-        controllerAs: 'page'
+        controllerAs: 'peopleController'
       });
   }
 

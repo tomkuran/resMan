@@ -1,0 +1,22 @@
+<div class="form-group">
+  <md-input-container>
+    <label>First Name</label>
+    <input ng-model="person.firstName">
+  </md-input-container>
+  <md-input-container>
+    <label>Last Name</label>
+    <input ng-model="person.lastName">
+  </md-input-container>
+</div>
+
+<div class="form-group">
+  <md-input-container>
+    <label>About: </label>
+    <textarea ng-model="person.description" md-maxlength="500" rows="5" md-select-on-focus></textarea>
+  </md-input-container>
+</div>
+
+<div class="form-group">
+    <md-button ng-click="peopleController.savePerson(person)">Save</md-button>
+    <md-button ng-click="peopleController.cancelEdit(person)">Cancel</md-button>
+</div>

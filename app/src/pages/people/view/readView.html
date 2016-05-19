@@ -1,0 +1,13 @@
+<md-card-title>
+  <md-card-title-text>
+    <span class="md-headline">{{person.firstName}} {{person.lastName}}</span>
+    <span class="md-subhead">{{person.description}}</span>
+  </md-card-title-text>
+  <md-card-title-media>
+    <div class="md-media-sm card-media"></div>
+  </md-card-title-media>
+</md-card-title>
+<md-card-actions layout="row" layout-align="end center">
+  <md-button ng-click="peopleController.deletePerson($event,person.id)">Delete</md-button>
+  <md-button ng-click="peopleController.editPerson(person)">Edit</md-button>
+</md-card-actions>

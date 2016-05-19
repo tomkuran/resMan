@@ -1,19 +1,20 @@
 <md-icon md-svg-icon="svg-3" class="avatar"></md-icon>
-<h2 class="md-title">Happy DB People</h2>
+<div layout="row" layout-margin>
+	<div flex="80">
+		<h2 class="md-title">Happy DB People</h2>
+	</div>
+	<div flex layout-align="end">
+		<md-button class="md-fab" aria-label="description" md-no-ink="true" md-ripple-size="full" ng-click="peopleController.showAddPerson(true)">+</md-button>
+	</div>
+</div>
 <div flex-xs flex-gt-xs="100" layout="column">
-	<md-card ng-repeat="person in people">
-		<md-card-title>
-			<md-card-title-text>
-				<span class="md-headline">{{person.firstName}} {{person.lastName}}</span>
-				<span class="md-subhead">{{person.description}}</span>
-			</md-card-title-text>
-			<md-card-title-media>
-				<div class="md-media-sm card-media"></div>
-			</md-card-title-media>
-		</md-card-title>
-		<md-card-actions layout="row" layout-align="end center">
-			<md-button ng-click="page.showToast($event)">Action 1</md-button>
-			<md-button ng-click="page.getPerson(person.id)">Action 2</md-button>
-		</md-card-actions>
+	<md-card >
+		<div ng-if="peopleController.isEditFormHidden()">
+			<div ng-include="'/src/pages/people/view/addView.html'"></div>
+		</div>
+		<div ng-repeat="person in peopleController.people">
+			<div ng-if="!person.editMode" ng-include="'/src/pages/people/view/readView.html'"></div>
+			<div ng-if="person.editMode" ng-include="'/src/pages/people/view/editView.html'"></div>
+		</div>
 	</md-card>
 </div>
